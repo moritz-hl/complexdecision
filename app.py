@@ -58,25 +58,31 @@ class UnivTree(Transformer):
         return base ** exp
 
 
-transformer = UnivTree()
-
-univ_parser = Lark(calc_grammar, parser='lalr', transformer=transformer, start = "imp")
-parse = univ_parser.parse
-parseRes = parse(r"a*xx^2+b*xx+c = 0 /\ b = 0 /\ c = 0 /\ 1-xx*zz=0 /\ 1-a*z = 0 ==> 1 = 0")
 
 
 @app.route('/')
 def homepage():
+    transformer = UnivTree()
+
+    univ_parser = Lark(calc_grammar, parser='lalr', transformer=transformer, start = "imp")
+    parse = univ_parser.parse
+
     formula = request.args.get("formula")
-    
     parsed = parse(formula)
+
+    basis = groebner(parsed[0], list(transformer.vars), order = "grevlex")
+    ev = 1 in basis
 
     the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
     return """
-    <h1>Hello heroku</h1>
-    <p>It is currently {time}.</p>
+    <h1>Gröbner</h1>
+    <form action = "/">
+    <input style="width:800px" type = "text" id = "formula" name = "formula" value = "{raw}">
+    </form>
     <p>Formula: {getp}</p>
-    """.format(time=the_time, getp = parsed)
+    <p> Basis: {basis}</p>
+    <p>Wahr: {ev} </p>
+    """.format(time=the_time,raw = formula, getp = parsed, basis = basis, ev = ev)
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
 
