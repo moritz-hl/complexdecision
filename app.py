@@ -1,11 +1,13 @@
 from flask import Flask
 from flask import request
 from datetime import datetime
+from sympy import symbols, groebner
+from lark import Lark, Transformer, v_args
+
 app = Flask(__name__)
 
 
-from sympy import symbols, groebner
-from lark import Lark, Transformer, v_args
+
 
 calc_grammar = r"""
     imp:  conj "==>" eq -> imp
