@@ -6,9 +6,6 @@ from lark import Lark, Transformer, v_args
 
 app = Flask(__name__)
 
-
-
-
 calc_grammar = r"""
     imp:  conj "==>" eq -> imp
     conj: [eq ("/\\" eq)*] -> conj
@@ -32,7 +29,6 @@ calc_grammar = r"""
     %import common.WS_INLINE
     %ignore WS_INLINE
 """
-
 @v_args(inline=True)    # Affects the signatures of the methods
 class UnivTree(Transformer):
     from operator import add, sub, mul, truediv as div, neg
@@ -56,9 +52,6 @@ class UnivTree(Transformer):
     
     def power(self, base, exp):
         return base ** exp
-
-
-
 
 @app.route('/')
 def homepage():
