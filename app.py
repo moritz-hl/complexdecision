@@ -29,7 +29,7 @@ calc_grammar = r"""
     %import common.WS_INLINE
     %ignore WS_INLINE
 """
-@v_args(inline=True)    # Affects the signatures of the methods
+@v_args(inline=True)
 class UnivTree(Transformer):
     from operator import add, sub, mul, truediv as div, neg
     number = int
