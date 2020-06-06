@@ -72,8 +72,6 @@ def homepage():
 
     basis = groebner(parsed[0], list(transformer.vars), order = "grevlex")
     ev = 1 in basis
-
-    the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
     return """
     <h1>Gröbner</h1>
     <form action = "/">
@@ -82,7 +80,7 @@ def homepage():
     <p>Formula: {getp}</p>
     <p> Basis: {basis}</p>
     <p>Wahr: {ev} </p>
-    """.format(time=the_time,raw = formula, getp = parsed, basis = basis, ev = ev)
+    """.format(raw = formula, getp = parsed, basis = basis, ev = ev)
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
 
