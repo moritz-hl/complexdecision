@@ -1,0 +1,9 @@
+formula: imp
+
+imp: conj "==>" tm
+
+tm: "a"
+
+conj: "b"
+%import common.WS
+%ignore WS
