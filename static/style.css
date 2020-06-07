@@ -10,3 +10,17 @@
 .false{
     background: red;
 }
+
+form > div{
+    position:relative;
+}
+
+#quant{
+    position:absolute;
+    right: 100%;
+    width: 100px;
+    text-align:right;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top:2px;
+}
