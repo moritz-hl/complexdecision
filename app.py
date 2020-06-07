@@ -29,7 +29,9 @@ footer = r"""
 <li> <a href = "/?formula=a*c+%3D+1%2Bb+%2F%5C+b*d+%3D+1%2Bc+%2F%5C+c*e+%3D+1%2Bd+%2F%5C+d*f+%3D+1%2Be+%2F%5C+a+%2F%3D+0+%2F%5C+b+%2F%3D+0+%3D%3D>+a+%3D+f">Period = 5</a>
 <li> <a href = "/?formula=a*x+%3D+0+%3D%3D>+a+%3D+0+%5C%2F+x+%3D+0">Integral I</a>
 <li> <a href = "/?formula=a*x+%3D+0++%2F%5C+a+%2F%3D+0+%3D%3D>+x+%3D+0">Integral II</a>
+<li> <a href = "/?formula=x%5E5%2Bx%5E4%2B1%3D0+%3D%3D>+x%5E2%2Bx%2B1+%3D+0+%5C%2F+x%5E3-x%2B1+%3D+0">Factor </a>
 <li> <a href = "/?formula=x+%3D+0++%3D%3D>++x+%3D+1">non-sense</a>
+
 </ul>
 </div>
 <script src = "app.js"></script>
