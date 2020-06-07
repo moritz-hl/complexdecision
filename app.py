@@ -16,6 +16,7 @@ header = r"""
 </head>
 <body>
 <div id = "wrapper">
+<h1>&#x2102;omplex Decisions</h1>
 """
 
 footer = r"""
@@ -23,8 +24,8 @@ footer = r"""
 <ul>
 <li> <a href = "/?formula=x+%3D+2+%2F%5C+y+%3D+3+%3D%3D>+x+%2B+y+%3D+5">2+3 = 5</a>
 <li> <a href = "/?formula=a%5E2+%3D+2+%2F%5C+x%5E2%2Ba*x+%2B+1+%3D+0+%3D%3D>+x%5E4+%2B+1+%3D+0">Complex Roots</a>
-<li> <a href = "/?formula=a*x%5E2%2Bb*x%2Bc+%3D+0+%2F%5C+a*y%5E2%2Bb*y%2Bc+%3D+0+%2F%5C+1-%28x-y%29*z+%3D+0+%3D%3D>+a*x*y+%3D+c">Vieta I</a>
-<li> <a href = "/?formula=a*x%5E2%2Bb*x%2Bc+%3D+0+%2F%5C+a*y%5E2%2Bb*y%2Bc+%3D+0+%2F%5C+1-%28x-y%29*z+%3D+0+%3D%3D>+a*%28x%2By%29+%3D+-b">Vieta II</a>
+<li> <a href = "/?formula=a*x%5E2%2Bb*x%2Bc+%3D+0+%2F%5C+a*y%5E2%2Bb*y%2Bc+%3D+0+%2F%5C+x+%2F%3D+y+%3D%3D>+a*x*y+%3D+c">Vieta I</a>
+<li> <a href = "/?formula=a*x%5E2%2Bb*x%2Bc+%3D+0+%2F%5C+a*y%5E2%2Bb*y%2Bc+%3D+0+%2F%5C+x+%2F%3D+y+%3D%3D>+a*%28x%2By%29+%3D+-b">Vieta II</a>
 <li> <a href = "/?formula=a*c+%3D+1%2Bb+%2F%5C+b*d+%3D+1%2Bc+%2F%5C+c*e+%3D+1%2Bd+%2F%5C+d*f+%3D+1%2Be+%2F%5C+a+%2F%3D+0+%2F%5C+b+%2F%3D+0+%3D%3D>+a+%3D+f">Period = 5</a>
 <li> <a href = "/?formula=a*x+%3D+0+%3D%3D>+a+%3D+0+%5C%2F+x+%3D+0">Integral I</a>
 <li> <a href = "/?formula=a*x+%3D+0++%2F%5C+a+%2F%3D+0+%3D%3D>+x+%3D+0">Integral II</a>
@@ -136,7 +137,7 @@ def homepage():
         if not ev:
             suc_class = "false"
         return wrap(f"""
-        <h1>&#x2102;omplex Decisions</h1>
+       
 <div id = "result" class = "{suc_class}">
 <form action = "/">
     <div>
