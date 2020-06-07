@@ -1,7 +1,0 @@
-{
-    "python.pythonPath": ".env/bin/python3",
-    "files.associations": {
-        "*.ttml": "xml",
-        "*.ttss": "css"
-    }
-}
