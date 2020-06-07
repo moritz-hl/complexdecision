@@ -13,14 +13,20 @@
 
 form > div{
     position:relative;
+    width : 100%;
 }
 
 #quant{
     position:absolute;
     right: 100%;
-    width: 100px;
+    width: 100000px;
+    overflow: wrap;
     text-align:right;
     padding-top: 1px;
     padding-bottom: 1px;
     margin-top:2px;
+}
+
+#formula{
+    width:100%;
 }

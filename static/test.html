@@ -12,7 +12,9 @@
 <div id = "result" class = "{suc_class}">
 <form action = "/">
     <div>
-<div id = "quant">&#x2200;a b c.</div><div id = "input"><input style="width:800px" type = "text" id = "formula" name = "formula" value = "{formula}"></div>
+<div id = "quant">&#x2200;<span id = "qvars"></span>.
+</div>
+<div id = "input"><input style="width:800px" type = "text" id = "formula" name = "formula" value = "{formula}"></div>
 </div>
 </form>
 <p>Formula: {parsed}</p>
@@ -29,5 +31,7 @@
 <li> <a href = "/?formula=x+%3D+0++%3D%3D>++x+%3D+1">non-sense</a>
 </ul>
 </div>
+
+<script src = "app.js"></script>
 </body>
 </html>
