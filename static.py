@@ -26,6 +26,7 @@ footer = r"""
 <li> <a href = "/?formula=x+%3D+0++%3D%3D>++x+%3D+1">non-sense</a>
 
 </ul>
+<a href = "/railroad.html">Syntax</a>
 </div>
 <script src = "app.js"></script>
 </body>
