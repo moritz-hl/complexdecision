@@ -99,6 +99,7 @@ class UnivTree(Transformer):
     def ineq(self, left, right):
         helper = symbols("z" + str(self.helpers))
         self.helpers += 1
+        self.vars.add(helper)
         return helper*(left-right)-1
     
     def power(self, base, exp):
@@ -124,13 +125,16 @@ def homepage():
     univ_parser = Lark(calc_grammar, parser='lalr', transformer=transformer, start = "imp")
 
     formula = request.args.get("formula")
+
+    if formula == "":
+        formula = "x=y==>y=x"
     
     try:
         parse = univ_parser.parse
 
         parsed = parse(formula)
 
-        z = symbols("zz1")
+        z = symbols("zz")
 
         basis = list(groebner(parsed[0] + [neg(parsed[1], z)], list(transformer.vars) + [z], order = "grevlex"))
         ev = 1 in basis
@@ -154,7 +158,6 @@ def homepage():
         """)
     except Exception as err:
         return wrap("""
-        <h1>Parser-Error</h1>
         <form action = "/">
         <input style="width:800px" type = "text" id = "formula" name = "formula" value = "{raw}">
         </form>
